@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "3000:3000"
+        environment:
+            MONGODB_ATLAS_PUBLIC_API_KEY: <PUBLIC_KEY_HERE>
+            MONGODB_ATLAS_PRIVATE_API_KEY: <PRIVATE_KEY_HERE>
+            MONGODB_ATLAS_ORG_ID: <ORG_ID_HERE>
+            MONGODB_ATLAS_PROJECT_ID: <PROJECT_ID_HERE>
+            MONGODB_CLUSTER_NAME: examples
+            MONGODB_USERNAME: demo
+            MONGODB_PASSWORD: password1234
+            # MONGODB_DATABASE: sample_mflix
+            # MONGODB_COLLECTION: movies
+            CLEANUP_ONDESTROY: true
